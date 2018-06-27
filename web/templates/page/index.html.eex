@@ -1,7 +1,4 @@
 <div class="row">
-  <div class="col-md-12 alert alert-info">
-    Hello, <span id="User"><%= @conn.params["user"] %></span>!
-  </div>
   <div class="col-md-8">
   <img src='<%= static_path(@conn, "/images/kl_logo.png") %>'>
     <h2>Messages</h2>
