@@ -9,14 +9,11 @@
 
     <title>Hello Chat!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <style>
-    body {
-    background-image: url(<%= static_path(@conn, "/images/kl_bg.png") %>);
-}
-    </style>
   </head>
 
-  <body>
+  <body style='height:100%;
+  background-image: url(<%= static_path(@conn, "/images/kl_bg.png") %>);
+  '>
     <div class="container">
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

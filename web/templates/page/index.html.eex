@@ -1,14 +1,34 @@
 <div class="row">
-  <div class="col-md-8">
-  <img src='<%= static_path(@conn, "/images/kl_logo.png") %>'>
-    <h2>Messages</h2>
-    <input type="text" id="NewMessage" placeholder="Type and press enter..." class="form-control">
-    <ul id="MessageList" class="list-unstyled"></ul>
+  <div  class="col-md-4" style="background: white;
+          position: fixed;
+        top: 0;
+        left: 0;
+        width:100%;
+        height:150px;
+        right: 0;
+        background-image: url('<%= static_path(@conn, "/images/kl_logo.png") %>');
+        background-size: contain;
+        ">
+
   </div>
-  <div  class="col-md-4">
-    <h2>Who’s Online</h2>
-    <ul id="UserList" class="list-unstyled">
-      <li>Loading online users...</li>
-    </ul>
+    <div class="col-md-8" style="margin-left:10px;">
+    <ul id="MessageList" class="list-unstyled" style="
+
+      background: rgba(255,255,255,0.4);
+      padding :20px;
+        max-height: 1000px;
+        overflow-y:scroll;
+        position: fixed;
+        top: 120px;
+        bottom: 100px;
+        left: 50px;
+        right: 50px;
+    "></ul>
   </div>
+    <input style="position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;"
+      type="text" id="NewMessage" placeholder="Kirjoita ja paina enter" class="form-control">
 </div>
