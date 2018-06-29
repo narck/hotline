@@ -31,7 +31,9 @@ let listBy = (user, {metas: metas}) => {
 }
 
 let userList = document.getElementById("UserList")
+
 let render = (presences) => {
+  return
   userList.innerHTML = Presence.list(presences, listBy)
     .map(presence => `
       <li>
@@ -67,6 +69,8 @@ messageInput.addEventListener("keypress", (e) => {
 })
 
 let messageList = document.getElementById("MessageList")
+let puhuva = document.getElementById("PP")
+
 let renderMessage = (message) => {
   let messageElement = document.createElement("li")
   messageElement.innerHTML = `
@@ -82,5 +86,15 @@ let renderMessages = (messageList) => {
   messageList.history.forEach((x) => renderMessage(x));
 }
 
+let talk = () => {
+  puhuva.setAttribute('style', 'display:block;')
+}
+
+let shutup = () => {
+  puhuva.setAttribute('style', 'display:none;')
+}
+
 room.on("message:new", message => renderMessage(message))
+room.on("pp:talk", message => talk())
+room.on("pp:end", message => shutup())
 room.on("message:history", message_list => renderMessages(message_list))

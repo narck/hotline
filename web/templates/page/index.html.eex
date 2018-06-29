@@ -9,7 +9,9 @@
         background-image: url('<%= static_path(@conn, "/images/kl_logo.png") %>');
         background-size: contain;
         ">
-
+  <div id="PP" style="display:none;">
+    <a href="http://www.animatedimages.org/cat-microphones-387.htm"><img src="http://www.animatedimages.org/data/media/387/animated-microphone-image-0040.gif" border="0" alt="animated-microphone-image-0040" /></a>
+  </div>
   </div>
     <div class="col-md-8" style="margin-left:10px;">
     <ul id="MessageList" class="list-unstyled" style="

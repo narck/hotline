@@ -6,7 +6,10 @@ defmodule Chat.PageController do
   end
 
   def sms_relay(conn, %{"say" => say} = params) do
+    Chat.Endpoint.broadcast "room:lobby", "pp:talk", %{}
     HTTPoison.post!("http://localhost:4001/guzell", "{\"say\": \"#{say}\"}", [{"Content-Type", "application/json"}])
+    Chat.Endpoint.broadcast "room:lobby", "pp:end", %{}
+
     text conn, "ok"
   end
 end
